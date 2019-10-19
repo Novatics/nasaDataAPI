@@ -21,6 +21,13 @@ class Satellite(models.Model):
         blank=False,
 	)
 
+    codename = models.CharField(
+		('Codename'),
+		help_text=("Satellite Codename"),
+		max_length=20,
+        blank=False,
+	)
+
     description = models.TextField(
 		('Description'),
 		help_text=("Satellite Description"),

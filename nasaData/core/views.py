@@ -24,7 +24,6 @@ class SatelliteViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
         load_data()
-        queryset = Satellite.objects.all()
         satellite = get_object_or_404(queryset, pk=pk)
-        serializer = SatelliteSerializer(user)
+        serializer = SatelliteSerializer(satellite)
         return Response(serializer.data)

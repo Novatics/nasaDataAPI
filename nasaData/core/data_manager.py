@@ -1,13 +1,25 @@
 import os.path
 import pandas as pd
 from .models import Satellite
+from pyorbital import astronomy
+from datetime import datetime
 
+def get_satellite_coordinates(lon, lat, alt, satellite_id):
+    try:
+        satellite = Satellite.objects.get(id=satellite_id)
+        orb = Orbital(satellite.codename)
+        now = datetime.utcnow()
+        return orb.get_observer_look(now, lon, lat, alt)
+    except Satellite.DoesNotExist:
+        return None
 
 def load_data():
     path = 'data/dataSet.xlsx'
     if(os.path.exists(path)):
         df = pd.read_excel(path)
-        indexes = ['name', 'satellite_type', 'description','launch_date']
+        indexes = ['name', 'satellite_type',
+        'description','launch_date', 'codename']
+
         ## All string to lowecase
         columns = [x.lower() for x in list(columns)]
         if(set(indexes).issuperset(set(columns))):
@@ -27,7 +39,8 @@ def save_satellite(self, row):
             satellite_type=row['satellite_type'],
             name=row['name'],
             description=row['description'],
-            launch_date=row['launch_date']
+            launch_date=row['launch_date'],
+            codename=row['codename']
         )
         satellite.save()
 
