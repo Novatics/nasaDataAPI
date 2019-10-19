@@ -1,20 +1,20 @@
 # Microserviço de Extração
-Extração e distribuição de dados de monitoria
+Extração e distribuição de dados de satélites da NASA
 
 # Getting started
 
-Antes de tudo, você precisa instalar [docker](https://docs.docker.com/install/) e [docker-compose](https://docs.docker.com/compose/install/).
+Antes de tudo, você precisa instalar [docker](https://docs.docker.com/install/) e [docker-compose](https://docs.docker.com/compose/install/)
 
 # Rodando a aplicação
 
 Clone o repositório
 ```bash
-$ git clone https://github.com/estudeplus/extracao.git
+$ git clone https://github.com/Novatics/nasaDataAPI
 ```
 
 Acesse o diretório principal da aplicação
 ```bash
-$ cd extracao
+$ cd nasaData
 ```
 Crie o arquivo .env
 ```bash
