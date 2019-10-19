@@ -1,7 +1,7 @@
 import pandas as pd
 from .models import Satellite
 
-def get_data():
+def load_data():
 
     df = pd.read_excel('data/dataSet.xlsx')
     indexes = ['name', 'satellite_type', 'description','launch_date']
