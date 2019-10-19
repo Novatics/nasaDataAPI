@@ -1,4 +1,22 @@
 from django.db import models
+from django.core.validators import FileExtensionValidator
+
+
+class Document(models.Model):
+
+    id = models.AutoField(
+        primary_key=True
+    )
+
+    document = models.FileField(
+        upload_to='data/%Y/%m/',
+        validators=[FileExtensionValidator(allowed_extensions=['xlsx'])]
+    )
+
+    uploaded_at = models.DateTimeField(
+        auto_now_add=True
+    )
+
 
 class Satellite(models.Model):
 
