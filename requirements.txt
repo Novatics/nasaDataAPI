@@ -1,0 +1,8 @@
+Django==2.2.1
+gunicorn
+psycopg2
+djangorestframework
+requests
+Pillow
+pandas
+xlrd
