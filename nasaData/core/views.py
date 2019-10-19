@@ -44,7 +44,6 @@ class CoondinatesViewSet(viewsets.ViewSet):
         if(self.request.query_params.get('lon') == None
             or self.request.query_params.get('lat') == None
             or self.request.query_params.get('alt') == None ):
-            print("NAO TEM TUDO")
             data = {
                 'id':pk,
                 'coordinates':None,
@@ -57,8 +56,6 @@ class CoondinatesViewSet(viewsets.ViewSet):
             altitude = float(request.query_params.get('alt'))
 
             coordinates = get_satellite_coordinates(longitude, latitude, altitude, pk)
-            print(coordinates)
-            print(coordinates[0])
             data = {
                 'id':pk,
                 'coordinates':{
