@@ -10,22 +10,23 @@ class Satellite(models.Model):
 
     satellite_type = models.CharField(
         ('Satellite Type'),
-		max_length=25,
+		max_length=255,
         blank=False,
     )
 
     name = models.CharField(
 		('Name'),
 		help_text=("Satellite Name"),
-		max_length=50,
+		max_length=255,
         blank=False,
 	)
 
     codename = models.CharField(
 		('Codename'),
 		help_text=("Satellite Codename"),
-		max_length=20,
+		max_length=255,
         blank=False,
+        default=name
 	)
 
     description = models.TextField(

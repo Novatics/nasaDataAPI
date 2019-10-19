@@ -5,4 +5,4 @@ class SatelliteSerializer(serializers.ModelSerializer):
 
 	class Meta:
 		model = Satellite
-		fields = ('id','satellite_type', 'name', 'description', 'launch_date')
+		fields = ('id','satellite_type', 'name', 'description', 'launch_date', 'codename')

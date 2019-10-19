@@ -14,19 +14,19 @@ def get_satellite_coordinates(lon, lat, alt, satellite_id):
         return None
 
 def load_data():
-    path = 'data/dataSet.xlsx'
+    path = 'nasaData/core/data/dataSet.xlsx'
     if(os.path.exists(path)):
         df = pd.read_excel(path)
         indexes = ['name', 'satellite_type',
         'description','launch_date', 'codename']
-
+        columns = df.columns
         ## All string to lowecase
         columns = [x.lower() for x in list(columns)]
         if(set(indexes).issuperset(set(columns))):
             for index, row in df.iterrows():
-                self.save_satellite(row)
+                save_satellite(row)
 
-def save_satellite(self, row):
+def save_satellite(row):
 
     # Check for existent satellite, or create new one
 
