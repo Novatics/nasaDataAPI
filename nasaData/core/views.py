@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import get_object_or_404
 
 from rest_framework import viewsets
 from rest_framework import renderers
@@ -24,6 +25,6 @@ class SatelliteViewSet(viewsets.ViewSet):
 
     def retrieve(self, request, pk=None):
         load_data()
-        satellite = get_object_or_404(queryset, pk=pk)
+        satellite = get_object_or_404(Satellite, pk=pk)
         serializer = SatelliteSerializer(satellite)
         return Response(serializer.data)
