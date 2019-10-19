@@ -14,7 +14,7 @@ services:
     volumes:
       - .:/code
     ports:
-      - "8004:8000"
+      - "8000:8000"
     depends_on:
       - db-extract
     env_file:
