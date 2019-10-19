@@ -1,7 +1,7 @@
 import os.path
 import pandas as pd
 from .models import Satellite
-from pyorbital import astronomy
+from pyorbital.orbital import Orbital
 from datetime import datetime
 
 def get_satellite_coordinates(lon, lat, alt, satellite_id):
