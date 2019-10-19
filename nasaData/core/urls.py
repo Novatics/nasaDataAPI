@@ -4,8 +4,5 @@ from .views import SatelliteViewSet
 from django.conf.urls import include
 
 router = DefaultRouter()
-router.register(r'satellites', SatelliteViewSet)
-
-urlpatterns = [
-    path('', include(router.urls)),
-]
+router.register(r'satellites', SatelliteViewSet, basename='sattelite')
+urlpatterns = router.urls
