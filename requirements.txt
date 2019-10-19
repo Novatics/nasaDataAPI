@@ -3,6 +3,6 @@ gunicorn
 psycopg2
 djangorestframework
 requests
-Pillow
 pandas
 xlrd
+pyorbital
