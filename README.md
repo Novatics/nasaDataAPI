@@ -33,6 +33,8 @@ PORT=8000
 Rode a aplicação
 
 ```bash
+$ (sudo) docker-compose run web-extract python manage.py makemigrations core
+$ (sudo) docker-compose run web-extract python manage.py migrate core
 $ (sudo) docker-compose up
 ```
 
