@@ -1,27 +1,28 @@
-# Microserviço de Extração
-Extração e distribuição de dados de satélites da NASA
+# Extraction Microservice
+
+Satellite Data Extraction and Distribution, and coordinates calculation
 
 # Getting started
 
-Antes de tudo, você precisa instalar [docker](https://docs.docker.com/install/) e [docker-compose](https://docs.docker.com/compose/install/)
+To start, you will need [docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/install/)
 
-# Rodando a aplicação
+# Running
 
-Clone o repositório
+Clone the Github repo
 ```bash
 $ git clone https://github.com/Novatics/nasaDataAPI
 ```
 
-Acesse o diretório principal da aplicação
+Access the main project folder
 ```bash
 $ cd nasaData
 ```
-Crie o arquivo .env
+Create .env file
 ```bash
 $ touch .env
 ```
 
-Copie e cole as linhas abaixo no .env
+Copy and paste the lines below in .env
 ```
 POSTGRES_USER=extractapi
 POSTGRES_PASSWORD=extractapi123
@@ -30,7 +31,7 @@ POSTGRES_HOST=db-extract
 PORT=8000
 ```
 
-Rode a aplicação
+Run the app
 
 ```bash
 $ (sudo) docker-compose run web-extract python manage.py makemigrations core
